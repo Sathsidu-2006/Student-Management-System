@@ -13,7 +13,7 @@ body{
     min-height: 100vh;
 }
 
-.btn-Container{
+.main-Container{
     width: 420px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.721);
@@ -24,20 +24,20 @@ body{
 
 }
 
-.btn-Container h1{
+.main-Container h1{
     color: white;
     text-align: center;
     padding-bottom: 30px;
 }
 
-.btn-Div{
+.container-Div{
     display: flex;
     justify-content: center;
     padding: 10px;
 
 }
 
-.btn-Div button{
+.container-Div button{
     width: 300px;
     height: 40px;
     background-color: transparent;
@@ -48,13 +48,41 @@ body{
     border: 1px solid white;
 
 }
-.btn-Div button:hover{
+.container-Div button:hover{
     background-color: rgba(255, 255, 255, 0.827);
     color: black;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.64);
 }
 
-.btn-Container:hover{
+.main-Container:hover{
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.64);
+}
+
+.container-Div input{
+    width: 300px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    border: 1px solid white;
+    padding-left: 10px;
+    
+}
+
+.container-Div input ::placeholder{
+    color: white;
+}
+
+.container-Div input :hover{
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.64);
+}
+
+.submitbtn :hover{
+    background-color: rgba(255, 255, 255, 0.827);
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.64);
 }
