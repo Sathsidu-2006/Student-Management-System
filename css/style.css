@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: rgb(24, 34, 1);
+    background-color: rgb(7, 10, 0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,4 +85,9 @@ body{
     color: black;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.64);
+}
+
+.Heading-Label{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

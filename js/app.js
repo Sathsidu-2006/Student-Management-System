@@ -31,3 +31,18 @@ function btnAddStudent() {
 
 }
 
+function btnSearchStudent(){
+
+    let checkId = document.getElementById("txtId").value;
+
+    let student = studentList.find(s => s.id===checkId);
+
+    if(student){
+        document.getElementById("txtName").value=student.name;
+        document.getElementById("txtAge").value=student.age;
+        document.getElementById("txtAddress").value=student.address;
+    }else{
+        alert("Student Not Found");
+    }
+}
+
