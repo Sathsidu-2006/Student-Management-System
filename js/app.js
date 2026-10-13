@@ -11,24 +11,29 @@ let student = {
 
 function btnAddStudent() {
 
-    let checkId = document.getElementById("txtId").value;
+    let checkId = document.getElementById("txtId").value.trim();
 
-    if (checkId === student.id) {
-       alert("Student Id Is Already Exists");
+    if(checkId === ""){
+        alert("No Values Entered");
+
+    }else if(studentList.some(student => student.id === checkId)){
+        alert("Student ID Already Exists");
+
     }else{
-        
-        student = {
-            id: document.getElementById("txtId").value,
+
+        let student = {
+            id: checkId,
             name: document.getElementById("txtName").value,
             age: document.getElementById("txtAge").value,
             address: document.getElementById("txtAddress").value
-        }
+        };
+
         studentList.push(student);
+
         localStorage.setItem("studentList", JSON.stringify(studentList));
 
         alert("Student Added Successfully...");
     }
-
 }
 
 function btnSearchStudent(){

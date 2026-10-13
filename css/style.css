@@ -56,7 +56,8 @@ body{
 }
 
 .main-Container:hover{
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.64);
+    box-shadow: 0 0 40px rgba(246, 243, 49, 0.951);
+    border: 1px solid black;
 }
 
 .container-Div input{
