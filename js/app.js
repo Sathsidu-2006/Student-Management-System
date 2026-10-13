@@ -3,23 +3,31 @@
 let studentList = JSON.parse(localStorage.getItem("studentList")) || [];
 
 let student = {
-    id :"",
-    name :"",
+    id: "",
+    name: "",
     age: "",
-    address :""
+    address: ""
+}
+
+function clearTxt() {
+    document.getElementById("txtId").value = "";
+    document.getElementById("txtName").value = "";
+    document.getElementById("txtAge").value = "";
+    document.getElementById("txtAddress").value = "";
 }
 
 function btnAddStudent() {
 
     let checkId = document.getElementById("txtId").value.trim();
 
-    if(checkId === ""){
+    if (checkId === "") {
         alert("No Values Entered");
 
-    }else if(studentList.some(student => student.id === checkId)){
+    } else if (studentList.some(student => student.id === checkId)) {
         alert("Student ID Already Exists");
+        clearTxt();
 
-    }else{
+    } else {
 
         let student = {
             id: checkId,
@@ -33,37 +41,62 @@ function btnAddStudent() {
         localStorage.setItem("studentList", JSON.stringify(studentList));
 
         alert("Student Added Successfully...");
+
+        clearTxt();
+
     }
 }
 
-function btnSearchStudent(){
+function btnSearchStudent() {
 
     let checkId = document.getElementById("txtId").value;
 
-    let student = studentList.find(s => s.id===checkId);
+    let student = studentList.find(s => s.id === checkId);
 
-    if(student){
-        document.getElementById("txtName").value=student.name;
-        document.getElementById("txtAge").value=student.age;
-        document.getElementById("txtAddress").value=student.address;
-    }else{
+    if (student) {
+        document.getElementById("txtName").value = student.name;
+        document.getElementById("txtAge").value = student.age;
+        document.getElementById("txtAddress").value = student.address;
+    } else {
         alert("Student Not Found");
     }
 }
 
-function btnUpdateStudent(){
+function btnUpdateStudent() {
     let checkId = document.getElementById("txtId").value;
 
-    let student = studentList.find(s => s.id===checkId);
+    let student = studentList.find(s => s.id === checkId);
 
-    if(student){
-        student.name=document.getElementById("txtName").value;
-        student.age=document.getElementById("txtAge").value;
-        student.address=document.getElementById("txtAddress").value;
+    if (student) {
+        student.name = document.getElementById("txtName").value;
+        student.age = document.getElementById("txtAge").value;
+        student.address = document.getElementById("txtAddress").value;
 
         localStorage.setItem("studentList", JSON.stringify(studentList));
-    }else{
+
+        alert("Student Details Updates Successfully...");
+        clearTxt();
+
+    } else {
         alert("Student Not Found");
+    }
+}
+
+function btnDeleteStudent() {
+
+    let checkId = document.getElementById("txtId").value;
+
+    let index = studentList.findIndex(s => s.id === checkId);
+
+    if (index !== -1) {
+        studentList.splice(index, 1);
+        localStorage.setItem("studentList", JSON.stringify(studentList));
+        alert("Student Deleted Successfully...");
+        clearTxt();
+
+    } else {
+        alert("Student Not Found...");
+        
     }
 }
 
