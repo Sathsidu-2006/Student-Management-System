@@ -46,3 +46,21 @@ function btnSearchStudent(){
     }
 }
 
+function btnUpdateStudent(){
+    let checkId = document.getElementById("txtId").value;
+
+    let student = studentList.find(s => s.id===checkId);
+
+    if(student){
+        student.name=document.getElementById("txtName").value;
+        student.age=document.getElementById("txtAge").value;
+        student.address=document.getElementById("txtAddress").value;
+
+        localStorage.setItem("studentList", JSON.stringify(studentList));
+    }else{
+        alert("Student Not Found");
+    }
+}
+
+
+
